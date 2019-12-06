@@ -1,0 +1,28 @@
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        TechDivision.Form.Encryption: true
+  Form:
+    presets:
+      default:
+        finisherPresets:
+          'TechDivision.Form.Encryption:EncryptedEmailFinisher':
+            implementationClassName: TechDivision\Form\Encryption\Finisher\EncryptedEmailFinisher
+            options: {  }
+
+TechDivision:
+  Form:
+    Encryption:
+      gpg:
+        options:
+          gpgBinary: 'gpg'
+          gpgArguments:
+            '--homedir': '~/.gnupg'
+            '--trust-model': 'always'
+            '--batch': null
+            '--armor': null
+            '--recipient': 'email@example.com'
+            '--no-default-keyring': null
+            '--keyring': '%FLOW_PATH_PACKAGES%Application/TechDivision.Form.Encryption/Resources/Public/'
+            '--encrypt': null

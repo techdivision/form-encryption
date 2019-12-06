@@ -1,0 +1,6 @@
+prototype(TechDivision.Form.Encryption:EncryptedEmailFinisher.Definition) < prototype(Neos.Form.Builder:EmailFinisher.Definition) {
+
+    formElementType >
+    formElementType = 'TechDivision.Form.Encryption:EncryptedEmailFinisher'
+
+}

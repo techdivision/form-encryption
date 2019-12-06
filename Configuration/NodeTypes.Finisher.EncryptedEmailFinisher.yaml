@@ -1,0 +1,6 @@
+'TechDivision.Form.Encryption:EncryptedEmailFinisher':
+  superTypes:
+    'Neos.Form.Builder:EmailFinisher': true
+  ui:
+    label: 'Encrypted Email Finisher'
+    icon: 'icon-key'
