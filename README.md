@@ -1,6 +1,10 @@
 # TechDivision.Form.Encryption
 This package gives you a very basic PGP encryption for the [neos/form-builder](https://github.com/neos/form-builder) package.  
 
+### Installation
+
+TechDivision.Form.Encryption is available via packagist. Add `"techdivision/form-encryption" : "~1.0"` to the require section of the composer.json or run `composer require techdivision/form-encryption`.  
+
 ## Simple Setup
 This enables a basic encryption with least configuration. 
 You basically just need a public key.
