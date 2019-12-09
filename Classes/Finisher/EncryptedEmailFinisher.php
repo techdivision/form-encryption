@@ -1,15 +1,16 @@
 <?php
 namespace TechDivision\Form\Encryption\Finisher;
 
-/*
- * This file is part of the Neos.Form package.
+/**
+ * This file is part of the TechDivision.Form.Encryption package.
  *
- * (c) Contributors of the Neos Project - www.neos.io
+ * TechDivision - neos@techdivision.com
  *
  * This package is Open Source Software. For the full copyright and license
  * information, please view the LICENSE file which was distributed with this
  * source code.
  */
+
 use Neos\Form\Exception\FinisherException;
 use Neos\Form\Finishers\EmailFinisher;
 use Neos\SwiftMailer\Message as SwiftMailerMessage;
