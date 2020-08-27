@@ -120,7 +120,12 @@ class EncryptedEmailFinisher extends EmailFinisher
         } else {
             // Encrypt message body
             $encryptedMessage = $this->encrypter->encryptMessage($mail->getBody());
-            $mail->setBody($encryptedMessage);
+
+            if ($format === self::FORMAT_PLAINTEXT) {
+                $mail->setBody($encryptedMessage);
+            } else {
+                $mail->setBody('<pre>' . $encryptedMessage . '</pre>');
+            }
 
             // Send mail
             $mail->send();
