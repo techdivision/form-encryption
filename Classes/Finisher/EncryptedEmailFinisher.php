@@ -97,11 +97,9 @@ class EncryptedEmailFinisher extends EmailFinisher
             $mail->setBcc($blindCarbonCopyAddress);
         }
 
-        if ($format === self::FORMAT_PLAINTEXT) {
-            $mail->setBody($message, 'text/plain');
-        } else {
-            $mail->setBody($message, 'text/html');
-        }
+        // Set Content-Type
+        $mail->setBody($message, 'multipart/encrypted');
+
         $this->addAttachments($mail);
 
         if ($testMode === true) {
@@ -120,12 +118,7 @@ class EncryptedEmailFinisher extends EmailFinisher
         } else {
             // Encrypt message body
             $encryptedMessage = $this->encrypter->encryptMessage($mail->getBody());
-
-            if ($format === self::FORMAT_PLAINTEXT) {
-                $mail->setBody($encryptedMessage);
-            } else {
-                $mail->setBody('<pre>' . $encryptedMessage . '</pre>');
-            }
+            $mail->setBody($encryptedMessage);
 
             // Send mail
             $mail->send();
